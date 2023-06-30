@@ -11,7 +11,6 @@ textarea.addEventListener('keyup', (e) => {
         sendMessage(e.target.value)
     }
 })
-
 function sendMessage(message) {
     let msg = {
         user: name,
@@ -21,10 +20,8 @@ function sendMessage(message) {
     appendMessage(msg, 'outgoing')
     textarea.value = ''
     scrollToBottom()
-
     // Send to server 
     socket.emit('message', msg)
-
 }
 
 function appendMessage(msg, type) {

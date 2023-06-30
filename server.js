@@ -14,7 +14,12 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
+app.get('/chat', (req, res) => {
+    res.sendFile(__dirname + '/chat.html')
+})
+
 // Socket 
+
 const io = require('socket.io')(http)
 
 io.on('connection', (socket) => {
